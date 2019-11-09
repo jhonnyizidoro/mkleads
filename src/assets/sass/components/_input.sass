@@ -3,3 +3,15 @@ select,
 textarea
 	&:focus
 		outline: none
+
+.form__default
+	+flex(center, center, column)
+	min-width: 400px
+	&__input,
+	&__select
+		border: 1px solid $dark
+		border-radius: 8px
+		font-size: 1.2rem
+		margin-bottom: 10px
+		padding: 10px 15px
+		width: 100%

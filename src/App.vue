@@ -1,7 +1,9 @@
 <template>
 	<div>
 		<Header></Header>
-		<router-view></router-view>
+		<transition name="fade" mode="out-in">
+			<router-view></router-view>
+		</transition>
 		<Steps></Steps>
 	</div>
 </template>
@@ -16,8 +18,18 @@
 			Steps,
 			Header,
 		},
-		beforeMount() {
-
-		}
 	}
 </script>
+
+<style lang="sass">
+	.fade-enter-active,
+	.fade-leave-active
+		transition-duration: 250ms
+		transition-property: opacity
+		transition-timing-function: ease
+
+	.fade-enter,
+	.fade-leave-active
+		opacity: 0
+
+</style>

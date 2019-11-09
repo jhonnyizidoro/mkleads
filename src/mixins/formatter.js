@@ -7,5 +7,8 @@ export default {
 			}
 			return `R$${formattedValue}`
 		}
-	}
+	},
+	$toInteger(value) {
+		return parseInt(String(Number(String(value).replace(/[^\d-.,]/g, '')).toFixed(0)), 10)
+	},
 }

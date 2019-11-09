@@ -2,12 +2,12 @@
 	<div>
 		<div class="title title--strong">Deseja incluir um veículo na troca?</div>
 		<div class="button__centered__group">
-			<button class="button button--large button--primary">
+			<router-link class="button button--large button--primary" to="/exchange/vehicle-information">
 				Sim<i class="icon icon--check"></i>
-			</button>
-			<button class="button button--large button--secondary">
+			</router-link>
+			<router-link class="button button--large button--secondary" to="/payment/method">
 				Não<i class="icon icon--cancel"></i>
-			</button>
+			</router-link>
 		</div>
 	</div>
 </template>
@@ -17,7 +17,3 @@
 		name: 'WantToExchange'
 	}
 </script>
-
-<style scoped>
-
-</style>
