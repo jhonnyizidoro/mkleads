@@ -1,11 +1,8 @@
 export default {
 	methods: {
-		$currency(value, decimals = 0) {
-			const formattedValue = value.toLocaleString('pt-BR').replace(',', '.')
-			if (decimals > 0) {
-				return `R$${formattedValue},${'0'.repeat(decimals)}`
-			}
-			return `R$${formattedValue}`
+		$currency(value, decimals = 2) {
+			const formattedValue = parseFloat(String(Math.abs(value))).toFixed(decimals).replace('.', ',').replace(/\B(?=(\d{3})+(?!\d))/g, '.')
+			return value >= 0 ? `R$${formattedValue}` : `-R$${formattedValue}`
 		},
 		$toFloat(value) {
 			return parseFloat(String(Number(String(value).replace(/[^\d-,]/g, '').replace(',', '.'))))

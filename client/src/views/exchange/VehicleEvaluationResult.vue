@@ -2,7 +2,7 @@
 	<div>
 		<div class="title title--regular">
 			<span>Pré avaliação: </span>
-			<strong class="title--success">{{$currency(evaluationValue, 2)}}</strong>
+			<strong class="title--success">{{$currency(evaluationValue)}}</strong>
 		</div>
 		<div class="cards">
 			<div class="card">

@@ -3,19 +3,19 @@
 		<div class="header__title">{{vehicle.title}}</div>
 		<div class="header__subtitle">
 			<strong class="header__subtitle__label">Preço de venda: </strong>
-			<strong class="header__subtitle__content header__subtitle__content--primary">{{$currency(vehicle.value)}}</strong>
+			<strong class="header__subtitle__content header__subtitle__content--primary">{{$currency(vehicle.value, 0)}}</strong>
 		</div>
 		<div class="header__subtitle" v-if="values.exchanges">
 			<strong class="header__subtitle__label">Veículos de troca: </strong>
-			<strong class="header__subtitle__content header__subtitle__content--secondary">{{$currency(values.exchanges)}}</strong>
+			<strong class="header__subtitle__content header__subtitle__content--secondary">{{$currency(values.exchanges, 0)}}</strong>
 		</div>
 		<div class="header__subtitle" v-if="values.downPayment">
 			<strong class="header__subtitle__label">Preço de venda: </strong>
-			<strong class="header__subtitle__content header__subtitle__content--primary">{{$currency(values.downPayment)}}</strong>
+			<strong class="header__subtitle__content header__subtitle__content--primary">{{$currency(values.downPayment, 0)}}</strong>
 		</div>
 		<div class="header__subtitle" v-if="values.exchanges || values.downPayment">
 			<strong class="header__subtitle__label">Subtotal: </strong>
-			<strong class="header__subtitle__content header__subtitle__content--success">{{$currency(values.subtotal)}}</strong>
+			<strong class="header__subtitle__content header__subtitle__content--success">{{$currency(values.subtotal, 0)}}</strong>
 		</div>
 	</header>
 </template>

@@ -28,7 +28,7 @@
 					</div>
 					<div class="card__text">
 						<strong>Pré-avaliação: </strong>
-						<span>{{$currency(exchange.evaluationValue, 2)}}</span>
+						<span>{{$currency(exchange.evaluationValue)}}</span>
 					</div>
 				</div>
 			</div>

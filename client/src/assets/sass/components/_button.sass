@@ -6,14 +6,6 @@
 	cursor: pointer
 	display: inline-block
 	transition: 250ms $cubic-bezier
-	&:focus
-		outline: none
-	&--primary
-		background: $primary
-	&--secondary
-		background: $secondary
-	&--fullwidth
-		width: 100%
 	&--large
 		font-size: 2rem
 		margin: 0 10px
@@ -39,6 +31,15 @@
 			background: $muted
 			box-shadow: none
 			pointer-events: none
+	&:focus
+		outline: none
+	&--primary
+		background: $primary
+	&--secondary
+		background: $secondary
+	&--fullwidth
+		margin: 0
+		width: 100%
 	&--muted
 		background: $muted
 	&__centered__group

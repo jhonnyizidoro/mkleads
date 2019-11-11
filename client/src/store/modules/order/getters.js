@@ -7,6 +7,10 @@ export default {
 		} else {
 			values.exchanges	= 0
 		}
+		if (state.payment.installmentMonths && state.payment.installmentValue) {
+			values.installmentMonths = state.payment.installmentMonths
+			values.installmentValue = state.payment.installmentValue
+		}
 		values.downPayment = parseInt(state.payment.downPayment) || 0
 		values.subtotal = state.vehicle.value - values.exchanges - values.downPayment
 		return values

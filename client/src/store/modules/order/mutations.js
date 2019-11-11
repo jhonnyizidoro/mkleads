@@ -14,7 +14,7 @@ export default {
 		Vue.set(state.payment, 'downPayment', data.downPayment)
 	},
 	SET_INSTALLMENT(state, data) {
-		state.payment.installmentMonths = data.installmentMonths
-		state.payment.installmentValue = data.installmentValue
+		Vue.set(state.payment, 'installmentMonths', data.installmentMonths)
+		Vue.set(state.payment, 'installmentValue', data.installmentValue)
 	},
 }
