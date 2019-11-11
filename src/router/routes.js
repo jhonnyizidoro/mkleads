@@ -1,7 +1,7 @@
 //Step 1: Usado na troca
 import WantToExchange from '../views/exchange/WantToExchange'
 import VehicleSituation from '../views/exchange/VehicleSituation'
-import VehicleConditions from '../views/exchange/VehicleConditions'
+import VehicleCondition from '../views/exchange/VehicleCondition'
 import VehicleInformation from '../views/exchange/VehicleInformation'
 import VehicleEvaluationResult from '../views/exchange/VehicleEvaluationResult'
 import AddAnotherVehicle from '../views/exchange/AddAnotherVehicle'
@@ -28,8 +28,8 @@ export const routes = [
 		component: VehicleInformation,
 	},
 	{
-		path: '/exchange/vehicle-conditions',
-		component: VehicleConditions,
+		path: '/exchange/vehicle-condition',
+		component: VehicleCondition,
 	},
 	{
 		path: '/exchange/vehicle-situation',

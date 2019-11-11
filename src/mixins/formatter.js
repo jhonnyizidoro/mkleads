@@ -6,9 +6,9 @@ export default {
 				return `R$${formattedValue},${'0'.repeat(decimals)}`
 			}
 			return `R$${formattedValue}`
-		}
-	},
-	$toInteger(value) {
-		return parseInt(String(Number(String(value).replace(/[^\d-.,]/g, '')).toFixed(0)), 10)
+		},
+		$toFloat(value) {
+			return parseFloat(String(Number(String(value).replace(/[^\d-,]/g, '').replace(',', '.'))))
+		},
 	},
 }

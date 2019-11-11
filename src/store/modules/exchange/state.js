@@ -1,5 +1,6 @@
 export default {
 	year: null,
+	fuel: null,
 	model: null,
 	maker: null,
 	exterior: null,
