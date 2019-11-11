@@ -1,5 +1,5 @@
 <template>
-	<div id="app">
+	<div>
 		<Header></Header>
 		<transition name="fade" mode="out-in">
 			<router-view></router-view>
@@ -22,10 +22,6 @@
 </script>
 
 <style lang="sass">
-	#app
-		margin: 0 auto
-		max-width: 1000px
-
 	.fade-enter-active,
 	.fade-leave-active
 		transition-duration: 250ms

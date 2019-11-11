@@ -14,4 +14,7 @@ export default {
 	setInstallment({commit}, data) {
 		commit('SET_INSTALLMENT', data)
 	},
+	setId({commit}, id) {
+		commit('SET_ID', id)
+	},
 }

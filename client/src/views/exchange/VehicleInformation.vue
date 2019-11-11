@@ -68,6 +68,7 @@
 				fetch(`http://fipeapi.appspot.com/api/1/${this.selectedType}/veiculo/${this.selectedMaker}/${this.selectedModel}/${this.selectedVersion}.json`)
 					.then(res => res.json())
 					.then(data => {
+						data.preco = this.$toFloat(data.preco)
 						this.$store.dispatch('exchange/setInformation', data)
 						this.$router.push('/exchange/vehicle-condition')
 					})

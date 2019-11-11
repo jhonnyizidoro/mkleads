@@ -17,4 +17,7 @@ export default {
 		Vue.set(state.payment, 'installmentMonths', data.installmentMonths)
 		Vue.set(state.payment, 'installmentValue', data.installmentValue)
 	},
+	SET_ID(state, id) {
+		state.id = id
+	},
 }

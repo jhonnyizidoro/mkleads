@@ -15,4 +15,5 @@ export default {
 		values.subtotal = state.vehicle.value - values.exchanges - values.downPayment
 		return values
 	},
+	clientFirstName: state => state.client.name ? state.client.name.split(' ')[0] : '',
 }

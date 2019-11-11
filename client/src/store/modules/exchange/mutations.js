@@ -1,12 +1,10 @@
-import formatter from '../../../mixins/formatter'
-
 export default {
 	SET_INFORMATION(state, data) {
 		state.year = data.ano_modelo
 		state.fuel = data.combustivel
 		state.model = data.veiculo
 		state.maker = data.marca
-		state.fipeValue = formatter.methods.$toFloat(data.preco)
+		state.fipeValue = data.preco
 	},
 	SET_CONDITION(state, data) {
 		state.exterior = data.exterior

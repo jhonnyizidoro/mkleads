@@ -51,7 +51,11 @@
 			}),
 		},
 		methods: {
-			sendOrder() {},
+			sendOrder() {
+				//fetch JSON.stringify(this.$store.state.order)
+				this.$store.dispatch('order/setId', 999)
+				this.$router.push('/order/summary')
+			},
 		},
 		created() {
 			this.$store.dispatch('app/setActiveStep', 2)
