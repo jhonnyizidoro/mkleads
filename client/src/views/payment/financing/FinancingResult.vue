@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div class="title title--regular">
-			<span>Entrada em dinheiro: </span>
+			<span>Valor da entrada: </span>
 			<strong class="title--success">{{$currency(values.downPayment)}}</strong>
 		</div>
 		<div class="button__centered__group">

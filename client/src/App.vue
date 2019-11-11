@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div id="content">
 		<Header></Header>
 		<transition name="fade" mode="out-in">
 			<router-view></router-view>
@@ -22,6 +22,13 @@
 </script>
 
 <style lang="sass">
+	#content
+		+flex(space-between, $d: column)
+		background: $background
+		height: 100vh
+		margin: 0 auto
+		max-width: 1000px
+
 	.fade-enter-active,
 	.fade-leave-active
 		transition-duration: 250ms

@@ -66,7 +66,7 @@
 
 <style scoped lang="sass">
 	.order
-		margin-top: 40px
+		margin: 40px 0
 		&__row
 			+flex(space-between)
 		&__bordered__row
@@ -92,4 +92,15 @@
 			color: $secondary
 		&__success
 			color: $success
+
+	+mobile
+		.order
+			text-align: center
+			&__row
+				+flex(center, center, column)
+			&__label
+				margin-bottom: 7px
+				margin-right: 0
+			&__label__right
+				text-align: center
 </style>

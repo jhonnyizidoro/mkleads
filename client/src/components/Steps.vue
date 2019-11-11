@@ -36,7 +36,6 @@
 
 <style scoped lang="sass">
 	.steps
-		+position($b: 0, $r: 0, $p: fixed)
 		+columns(3)
 		background: $lighter
 		width: 100%
@@ -49,4 +48,11 @@
 			+font($w: $font-3, $c: $dark)
 			background: $light
 			border-top: 3px solid $secondary
+
+	+mobile
+		.steps
+			+flex(center, center, $g: 1)
+			margin-top: 25px
+			>*
+				width: auto
 </style>

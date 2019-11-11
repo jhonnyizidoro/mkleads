@@ -10,7 +10,7 @@
 			<strong class="header__subtitle__content header__subtitle__content--secondary">{{$currency(values.exchanges, 0)}}</strong>
 		</div>
 		<div class="header__subtitle" v-if="values.downPayment">
-			<strong class="header__subtitle__label">Preço de venda: </strong>
+			<strong class="header__subtitle__label">Entrada: </strong>
 			<strong class="header__subtitle__content header__subtitle__content--primary">{{$currency(values.downPayment, 0)}}</strong>
 		</div>
 		<div class="header__subtitle" v-if="values.exchanges || values.downPayment">
@@ -41,11 +41,12 @@
 
 <style scoped lang="sass">
 	.header
-		+position(0, 0, $p: fixed)
+		background: $lighter
+		padding-bottom: 10px
 		text-align: center
 		width: 100%
 		&__title
-			+font(1.4rem, $lh: 1.8, $t: uppercase)
+			+font(1.3rem, $lh: 1.7, $t: uppercase)
 		&__subtitle
 			display: inline-block
 			margin: 0 7px
@@ -56,4 +57,13 @@
 				color: $secondary
 			&--success
 				color: $success
+
+	+mobile
+		.header
+			&__title
+				+font(1.1rem, $lh: 1.3, $t: uppercase)
+				padding: 5px
+			&__subtitle
+				display: block
+				margin: 3px 0
 </style>
