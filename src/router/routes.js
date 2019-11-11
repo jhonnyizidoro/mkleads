@@ -9,10 +9,10 @@ import AddAnotherVehicle from '../views/exchange/AddAnotherVehicle'
 //Step 2: Forma de pagamento
 import PaymentMethod from '../views/payment/PaymentMethod'
 import DownPayment from '../views/payment/financing/DownPayment'
-import CashUserInformation from '../views/payment/cash/UserInformation'
+import CashClientInformation from '../views/payment/cash/ClientInformation'
 import FinancingResult from '../views/payment/financing/FinancingResult'
 import DownPaymentValue from '../views/payment/financing/DownPaymentValue'
-import FinancingUserInformation from '../views/payment/financing/UserInformation'
+import FinancingClientInformation from '../views/payment/financing/ClientInformation'
 
 //Step 3: Pedido
 import OrderSummary from '../views/order/OrderSummary'
@@ -48,12 +48,12 @@ export const routes = [
 		component: PaymentMethod,
 	},
 	{
-		path: '/payment/cash/user-information',
-		component: CashUserInformation,
+		path: '/payment/cash/client-information',
+		component: CashClientInformation,
 	},
 	{
-		path: '/payment/financing/user-information',
-		component: FinancingUserInformation,
+		path: '/payment/financing/client-information',
+		component: FinancingClientInformation,
 	},
 	{
 		path: '/payment/financing/down-payment',

@@ -3,7 +3,7 @@ export default {
 	downPayment: null,
 	installment: null,
 	availableInstallments: [],
-	buyer: {
+	client: {
 		name: null,
 		cpf: null,
 		cellphone: null,
