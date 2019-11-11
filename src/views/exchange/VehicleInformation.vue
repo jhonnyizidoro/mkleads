@@ -21,7 +21,7 @@
 				<option v-for="version in versions" :value="version.key">{{version.name}}</option>
 			</select>
 			<div class="button__aligned__right">
-				<button class="button button--default button--primary" type="submit" :disabled="!selectedType || !selectedMaker || !selectedModel || !selectedVersion">
+				<button class="button button--default button--primary" type="submit" :disabled="!canProceed">
 					Avançar<i class="icon icon--arrow-right"></i>
 				</button>
 			</div>
@@ -41,6 +41,11 @@
 				selectedMaker: null,
 				selectedModel: null,
 				selectedVersion: null,
+			}
+		},
+		computed: {
+			canProceed() {
+				return this.selectedType && this.selectedMaker && this.selectedModel && this.selectedVersion
 			}
 		},
 		methods: {

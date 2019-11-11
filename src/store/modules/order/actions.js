@@ -5,4 +5,10 @@ export default {
 	removeExchange({commit}, index) {
 		commit('REMOVE_EXCHANGE', index)
 	},
+	setClient({commit}, data) {
+		commit('SET_CLIENT', data)
+	},
+	setDownPayment({commit}, data) {
+		commit('SET_DOWN_PAYMENT', data)
+	},
 }

@@ -32,7 +32,7 @@
 				<option v-for="mileage in mileages" :value="mileage">Menor que {{mileage}}KM</option>
 			</select>
 			<div class="button__aligned__right">
-				<button class="button button--default button--primary" type="submit" :disabled="!selectedExterior || !selectedMechanics || !selectedMileage">
+				<button class="button button--default button--primary" type="submit" :disabled="!canProceed">
 					Avançar<i class="icon icon--arrow-right"></i>
 				</button>
 			</div>
@@ -57,7 +57,10 @@
 					mileageArray.push(i)
 				}
 				return mileageArray
-			}
+			},
+			canProceed() {
+				return this.selectedExterior && this.selectedMechanics && this.selectedMileage
+			},
 		},
 		methods: {
 			setCondition() {

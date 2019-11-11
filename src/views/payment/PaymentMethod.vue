@@ -10,6 +10,9 @@
 
 <script>
 	export default {
-		name: 'PaymentMethod'
+		name: 'PaymentMethod',
+		created() {
+			this.$store.dispatch('app/setActiveStep', 1)
+		},
 	}
 </script>
