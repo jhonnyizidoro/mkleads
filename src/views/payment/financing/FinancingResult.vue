@@ -12,6 +12,18 @@
 			<strong class="title--success">{{$currency(values.subtotal, 2)}}</strong>
 			<span> está em análise. Selecione o prazo que você deseja</span>
 		</div>
+		<form class="form__default" @submit.prevent="setInstallment">
+			<div class="form__default__buttons">
+				<div class="form__default__button__wrapper" v-for="installment in installments">
+					<button class="button button--secondary button--default button--fullwidth" type="button" @click="selectedInstallment = installment" :class="{ 'button--muted': selectedInstallment && selectedInstallment !== installment }">{{installment.months}} x {{$currency(installment.amount, 2)}}</button>
+				</div>
+			</div>
+			<div class="button__aligned__right">
+				<button class="button button--default button--primary" type="submit" :disabled="!selectedInstallment">
+					Avançar<i class="icon icon--arrow-right"></i>
+				</button>
+			</div>
+		</form>
 	</div>
 </template>
 
@@ -20,10 +32,39 @@
 
 	export default {
 		name: 'FinancingResult',
+		data() {
+			return {
+				installments: [],
+				selectedInstallment: null,
+			}
+		},
 		computed: {
 			...mapGetters('order', {
 				values: 'values',
 			}),
+		},
+		methods: {
+			fetchInstallments() {
+				return [
+					{months: 12, amount: parseInt(String(this.values.subtotal / 12))},
+					{months: 18, amount: parseInt(String(this.values.subtotal / 18))},
+					{months: 24, amount: parseInt(String(this.values.subtotal / 24))},
+					{months: 36, amount: parseInt(String(this.values.subtotal / 36))},
+					{months: 48, amount: parseInt(String(this.values.subtotal / 48))},
+					{months: 60, amount: parseInt(String(this.values.subtotal / 60))},
+				]
+			},
+			setInstallment() {
+				const data = {
+					installmentMonths: this.selectedInstallment.months,
+					installmentValue: this.selectedInstallment.value,
+				}
+				this.$store.dispatch('order/setInstallment', data)
+				this.$router.push('/order/confirmation')
+			},
+		},
+		created() {
+			this.installments = this.fetchInstallments()
 		},
 	}
 </script>

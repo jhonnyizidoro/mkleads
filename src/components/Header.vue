@@ -1,5 +1,5 @@
 <template>
-	<header class="header">
+	<header class="header" v-if="showHeader">
 		<div class="header__title">{{vehicle.title}}</div>
 		<div class="header__subtitle">
 			<strong class="header__subtitle__label">Preço de venda: </strong>
@@ -28,6 +28,9 @@
 		computed: {
 			...mapState('order', {
 				vehicle: 'vehicle',
+			}),
+			...mapState('app', {
+				showHeader: 'showHeader',
 			}),
 			...mapGetters('order', {
 				values: 'values',

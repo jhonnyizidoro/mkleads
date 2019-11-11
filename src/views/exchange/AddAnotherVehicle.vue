@@ -9,7 +9,7 @@
 				Não<i class="icon icon--cancel"></i>
 			</router-link>
 		</div>
-		<div v-if="exchanges.length" class="title title--medium">Veículos já inclusos na negociação:</div>
+		<div v-if="exchanges.length" class="title title--regular">Veículos já inclusos na negociação:</div>
 		<div class="cards">
 			<div v-for="(exchange, index) in exchanges" class="card__wrapper">
 				<div class="card">

@@ -11,4 +11,7 @@ export default {
 	setDownPayment({commit}, data) {
 		commit('SET_DOWN_PAYMENT', data)
 	},
+	setInstallment({commit}, data) {
+		commit('SET_INSTALLMENT', data)
+	},
 }
