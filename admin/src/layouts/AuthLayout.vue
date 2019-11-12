@@ -1,13 +1,17 @@
 <template>
-	$END$
+	<div class="auth__container">
+		<slot/>
+	</div>
 </template>
 
 <script>
 	export default {
-		name: "AuthLayout"
+		name: 'AuthLayout'
 	}
 </script>
 
-<style scoped>
-
+<style scoped lang="sass">
+	.auth__container
+		+flex(center, center)
+		height: 100%
 </style>

@@ -1,13 +1,12 @@
 <template>
-	$END$
+	
 </template>
 
 <script>
 	export default {
-		name: "Dashboard"
+		name: 'Dashboard',
+		created() {
+			this.$store.dispatch('app/disableAuthLayout')
+		},
 	}
 </script>
-
-<style scoped>
-
-</style>

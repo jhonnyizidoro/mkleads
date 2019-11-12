@@ -1,8 +1,8 @@
 export default {
-	SET_ACTIVE_STEP(state, step) {
-		state.activeStep = step
+	ENABLE_AUTH_LAYOUT(state) {
+		state.authLayout = true
 	},
-	HIDE_HEADER(state) {
-		state.showHeader = false
-	}
+	DISABLE_AUTH_LAYOUT(state) {
+		state.authLayout = false
+	},
 }

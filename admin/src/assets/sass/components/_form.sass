@@ -1,5 +1,18 @@
 input,
 select,
 textarea
+	border: 1px solid $light
+	border-radius: 5px
+	padding: 10px
+	transition: 300ms $cubic-bezier
 	&:focus
+		border: 1px solid $muted
 		outline: none
+	&::placeholder
+		+font(.875rem, $st: italic, $c: $muted)
+
+.form__default
+	+flex($d: column)
+	min-width: 400px
+	&__input
+		margin-bottom: 10px

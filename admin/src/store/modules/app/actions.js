@@ -1,8 +1,8 @@
 export default {
-	setActiveStep({commit}, step) {
-		commit('SET_ACTIVE_STEP', step)
+	enableAuthLayout({commit}) {
+		commit('ENABLE_AUTH_LAYOUT')
 	},
-	hideHeader({commit}) {
-		commit('HIDE_HEADER')
+	disableAuthLayout({commit}) {
+		commit('DISABLE_AUTH_LAYOUT')
 	},
 }
