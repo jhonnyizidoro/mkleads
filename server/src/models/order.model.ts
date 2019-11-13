@@ -1,43 +1,52 @@
-export type Order = {
-  orderId : number,
-  vehicle : {
-    id : number,
-    externalId : string,
-    title : string,
-    sellValue : string,
-    image : string
-  },
-  payment : {
-    method : string,
-    entry : string,
-    installment : string
-  },
-  client : {
-    id : number,
-    name : string,
-    cpf : string,
-    cellphone : string,
-    email : string
-  },
-  exchanges : [
-    {
-      id : number,
-      km : number,
-      conditionExternal : string,
-      conditionInternal : string,
-      financing : true,
-      valueFinancing : number,
-      valueOffer : number,
-      accepted : true,
-      fipeDetails : {
-        fipeCod : number,
-        brand : string,
-        model : string,
-        year : string,
-        reference : string,
-        value : number
-      }
-    }
-  ]
+import {Model, model, property, hasOne, hasMany} from '@loopback/repository';
+import {
+  Client,
+  Proposal,
+  DealerVehicle,
+  DealerVehicleWithRelations,
+  ClientWithRelations,
+  ProposalWithRelations,
+  ExchangeVehicle,
+  ExchangeVehicleWithRelations,
+} from "../models";
+
+@model()
+export class Order extends Model {
+  @property({
+    type: 'number',
+    id: true,
+  })
+  order_id: number;
+
+  @property({
+    type: 'number',
+  })
+  dealer_id: number;
+
+  @hasOne(() => DealerVehicle)
+  vehicle: DealerVehicle;
+
+  @hasOne(() => Proposal)
+  payment: Proposal;
+
+  @hasOne(() => Client)
+  client: Client;
+
+  @hasMany(() => ExchangeVehicle)
+  exchanges: ExchangeVehicle[];
+
+  constructor(data?: Partial<Order>) {
+    super(data);
+  }
 }
+
+export interface OrderRelations {
+  vehicle: DealerVehicleWithRelations;
+  client: ClientWithRelations;
+  payment: ProposalWithRelations;
+  exchanges: ExchangeVehicleWithRelations;
+}
+
+export type OrderWithRelations = Order & OrderRelations;
+
 
