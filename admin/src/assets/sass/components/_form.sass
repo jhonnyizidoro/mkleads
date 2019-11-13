@@ -1,0 +1,40 @@
+input,
+select,
+textarea
+	border: 1px solid $light
+	border-radius: 5px
+	transition: 300ms $cubic-bezier
+	&:focus
+		border: 1px solid $muted
+		outline: none
+	&::placeholder
+		+font(.875rem, $st: italic, $c: $muted)
+
+input
+	padding: 10px
+
+select
+	padding: 9px 10px
+
+.form__default
+	+flex($d: column)
+	min-width: 400px
+	&__input
+		margin-bottom: 10px
+	&__inline
+		+flex($g: 1)
+		>:not(:last-child)
+			margin-right: 10px
+	&__label
+		+font(.875rem, $font-2, $c: $main)
+		display: block
+		margin: 7px 0 3px
+	&__input,
+	&__select
+		width: 100%
+	&__label__link
+		+font($c: $primary, $d: underline)
+		cursor: pointer
+		transition: 300ms
+		&:hover
+			color: $dark
