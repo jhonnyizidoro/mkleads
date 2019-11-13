@@ -127,7 +127,7 @@ export class OrderController {
     if (payload.vehicle && payload.vehicle.id && payload.vehicle.id !== 0) {
       const dealerVehicle = payload.vehicle;
 
-      if (dealerVehicle.external_id && dealerVehicle.external_id === 0)
+      if (dealerVehicle.external_id && dealerVehicle.external_id === '')
         delete dealerVehicle.external_id;
 
       if (dealerVehicle.title && dealerVehicle.title === '')
