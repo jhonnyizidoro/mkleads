@@ -16,8 +16,13 @@
 </template>
 
 <script>
+	import {mask} from 'vue-the-mask'
+
 	export default {
 		name: 'FinancingClientInformation',
+		directives: {
+			mask
+		},
 		data() {
 			return {
 				name: null,

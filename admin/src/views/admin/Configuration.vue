@@ -2,8 +2,23 @@
 	<div>
 		<div class="title title--regular">Configuração</div>
 		<div class="card">
-			<div class="card__title">Seletores do DOM</div>
 			<form class="form__default">
+				<div class="card__title">Desvalorização do valor da FIPE nas avaliações</div>
+				<div class="form__default__inline">
+					<fieldset class="form__default__fieldset">
+						<label class="form__default__label">* Desvalorização padrão</label>
+						<input class="form__default__input" placeholder="Valor" aria-label="Desvalorização padrão nas avaliações do veículos" v-model="configuration.evaluation.defaultDevaluation">
+					</fieldset>
+					<fieldset class="form__default__fieldset">
+						<label class="form__default__label">* Desvalorização para cada atributo "Bom"</label>
+						<input class="form__default__input" placeholder="Valor" aria-label="Desvalorização padrão nas avaliações do veículos" v-model="configuration.evaluation.devaluationForGoodCondition">
+					</fieldset>
+					<fieldset class="form__default__fieldset">
+						<label class="form__default__label">* Desvalorização para cada atributo "Normal"</label>
+						<input class="form__default__input" placeholder="Valor" aria-label="Desvalorização padrão nas avaliações do veículos" v-model="configuration.evaluation.devaluationForRegularCondition">
+					</fieldset>
+				</div>
+				<div class="card__title">Seletores do DOM</div>
 				<div class="form__default__inline" v-for="(attribute, index) in configuration.attributes">
 					<fieldset class="form__default__fieldset">
 						<label class="form__default__label">
@@ -71,6 +86,7 @@
 				this.showModal = false
 				const data = {newAttributeName: this.newAttributeName}
 				this.$store.dispatch('dealer/addConfigurationAttribute', data)
+				this.newAttributeName = null
 			},
 			removeAttribute(index) {
 				this.$store.dispatch('dealer/removeConfigurationAttribute', index)

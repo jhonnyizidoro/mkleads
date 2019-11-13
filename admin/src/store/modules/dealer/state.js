@@ -20,5 +20,10 @@ export default {
 				attribute: 'src',
 			},
 		],
+		evaluation: {
+			defaultDevaluation: 20,
+			devaluationForRegularCondition: 2,
+			devaluationForGoodCondition: 2,
+		},
 	},
 }
