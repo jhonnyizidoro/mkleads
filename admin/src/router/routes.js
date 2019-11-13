@@ -6,7 +6,7 @@ import Configuration from '../views/admin/Configuration'
 
 export const routes = [
 	{
-		path: '/auth',
+		path: '/',
 		component: Login,
 	},
 	{

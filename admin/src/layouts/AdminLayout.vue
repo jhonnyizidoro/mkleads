@@ -29,6 +29,7 @@
 	.admin__container
 		display: flex
 		height: 100%
+		min-height: 100vh
 		&__left
 			width: 15%
 		&__right

@@ -14,4 +14,5 @@
 	.auth__container
 		+flex(center, center)
 		height: 100%
+		min-height: 100vh
 </style>
