@@ -1,6 +1,8 @@
 import {Entity, model, property} from '@loopback/repository';
 
-@model()
+@model({
+  name: 'dealer_vehicle',
+})
 export class DealerVehicle extends Entity {
   @property({
     type: 'number',
@@ -15,24 +17,14 @@ export class DealerVehicle extends Entity {
   dealer_id?: number;
 
   @property({
-    type: 'number',
+    type: 'string',
   })
-  external_id?: number;
+  external_id?: string;
 
   @property({
     type: 'string',
   })
-  version?: string;
-
-  @property({
-    type: 'string',
-  })
-  model?: string;
-
-  @property({
-    type: 'string',
-  })
-  brand?: string;
+  title?: string;
 
   @property({
     type: 'number',
